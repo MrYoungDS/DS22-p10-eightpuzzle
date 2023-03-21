@@ -1,17 +1,24 @@
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.fail;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-
-import org.junit.Before;
-import org.junit.Test;
 
 import edu.princeton.cs.algs4.In;
 
 public class BoardTest {
   
   Board board;
-  @Before
+  @BeforeEach
   public void setUp() throws Exception {
     board = generateBoard("input10.txt");
   }
@@ -29,14 +36,6 @@ public class BoardTest {
     // solve the puzzle
     Solver solver = new Solver(initial);
 
-    // print solution to standard output
-//    if (!solver.isSolvable())
-//        StdOut.println("No solution possible");
-//    else {
-//        StdOut.println("Minimum number of moves = " + solver.moves());
-//        for (Board board : solver.solution())
-//            StdOut.println(board);
-//    }
     return initial;
   }
 
@@ -49,5 +48,4 @@ public class BoardTest {
   public void testSegments() {
     //fail("Not yet implemented");
   }
-
 }
